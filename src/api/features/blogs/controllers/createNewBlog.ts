@@ -27,8 +27,8 @@ export default function createNewBlog(req: Request, res: Response) {
       console.log('There was an error creating blog', error);
       return sendFailureResponse({
         res,
-        statusCode: 500,
-        message: 'There was an error creating blog',
+        statusCode: error.statusCode,
+        message: `'${error.message}'`,
       });
     });
 }
